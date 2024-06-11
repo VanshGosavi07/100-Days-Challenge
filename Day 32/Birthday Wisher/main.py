@@ -32,8 +32,8 @@ def pick_letter(names):
 # 4. Send the letter generated in step 3 to that person's email address.
 
 def send_mail(messages, email_id):
-    my_email = 'kalpeshdesale570@gmail.com'
-    password = 'nnez uooi cymz qsun'
+    my_email = ''
+    password = ''
 
     with smtplib.SMTP('smtp.gmail.com', 587) as connection:
         connection.starttls()  # for secure connection
