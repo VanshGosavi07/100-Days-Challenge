@@ -1,0 +1,52 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+{% include "header.html" %}
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('https://images.unsplash.com/photo-1531592937781-344ad608fabf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>Register</h1>
+                    <span class="subheading">Create an account to join the blog.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        {{ wtf.form_field(form.name, class="form-control") }}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        {{ wtf.form_field(form.email, class="form-control") }}
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="form-group floating-label-form-group controls">
+                        {{ wtf.form_field(form.password, class="form-control") }}
+                    </div>
+                </div>
+                <br>
+                <div id="success"></div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" id="sendMessageButton">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<hr>
+{% include "footer.html" %}
+{% endblock %}
